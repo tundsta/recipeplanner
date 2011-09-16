@@ -36,7 +36,7 @@ privileged aspect IngredientQuantityForm_Roo_VaadinVisuallyComposableEntityForm 
     private Map<Object, PropertyConverter> IngredientQuantityForm.converterMap = new LinkedHashMap<Object, PropertyConverter>();
     
     public Collection<Object> IngredientQuantityForm.getBeanPropertyIds() {
-        return Arrays.asList(new Object[] { "ingredient", "amount" });
+        return Arrays.asList(new Object[] { "amount", "ingredient" });
     }
     
     public Field IngredientQuantityForm.getField(Object propertyId) {
@@ -70,7 +70,8 @@ privileged aspect IngredientQuantityForm_Roo_VaadinVisuallyComposableEntityForm 
     }
     
     public void IngredientQuantityForm.configureFieldMap() {
-        // no properties mapped - override this method to customize
+        fieldMap.put("amount", amountField);
+        fieldMap.put("ingredient", ingredientField);
     }
     
     public void IngredientQuantityForm.configureFields() {

@@ -9,14 +9,16 @@ import java.util.HashSet;
 import javax.persistence.ManyToMany;
 import javax.persistence.CascadeType;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @RooJavaBean
 @RooToString
 @RooEntity
 public class IngredientQuantity {
 
+    private double amount;
+
+    @NotNull
     @ManyToOne
     private Ingredient ingredient;
-
-    private double amount;
 }

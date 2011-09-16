@@ -24,3 +24,7 @@ field number --fieldName amount --type double
 focus --class ~.domain.Ingredient
 field string --fieldName name --notNull 
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-09-16 09:10:30
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-09-16 13:41:48
+focus --class ~.domain.IngredientQuantity
+// [failed] field reference --fieldName ingredient --type ~.domain.Ingredient --notNull true
+field reference --fieldName ingredient --type ~.domain.Ingredient --notNull true

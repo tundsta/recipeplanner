@@ -16,6 +16,14 @@ privileged aspect IngredientQuantity_Roo_JavaBean {
     
     private Long IngredientQuantity.ingredientId;
     
+    public double IngredientQuantity.getAmount() {
+        return this.amount;
+    }
+    
+    public void IngredientQuantity.setAmount(double amount) {
+        this.amount = amount;
+    }
+    
     public Ingredient IngredientQuantity.getIngredient() {
         if (this.ingredientId != null) {
             if (this.ingredient == null || this.ingredient.getId() != this.ingredientId) {
@@ -37,14 +45,6 @@ privileged aspect IngredientQuantity_Roo_JavaBean {
             this.ingredientId = null;
         }
         this.ingredient = ingredient;
-    }
-    
-    public double IngredientQuantity.getAmount() {
-        return this.amount;
-    }
-    
-    public void IngredientQuantity.setAmount(double amount) {
-        this.amount = amount;
     }
     
 }
