@@ -1,0 +1,26 @@
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-09-16 08:12:33
+project --topLevelPackage com.bulbview.recipeplanner --projectName recipeplanner --java 6
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-09-16 08:12:34
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-09-16 08:12:46
+persistence setup --database GOOGLE_APP_ENGINE --provider DATANUCLEUS
+entity --class ~.domain.Schedule --testAutomatically true
+entity --class ~.domain.Ingredient --testAutomatically true
+entity --class ~.domain.IngredientQuantity --testAutomatically true
+field set --fieldName ingredients --type ~.domain.Ingredient 
+entity --class ~.domain.Recipe --testAutomatically true
+field string --fieldName name --notNull true --sizeMax 50
+field set --fieldName ingredients --type ~.domain.IngredientQuantity --cardinality ONE_TO_MANY 
+focus --class ~.domain.Schedule
+field date --fieldName startDate --type java.util.Date --notNull --dateFormat MEDIUM 
+field set --fieldName recipes --type ~.domain.Recipe
+vaadin setup --applicationPackage ~.web --baseName recipeplanner --themeName recipeplanner --useJpaContainer false
+vaadin generate all --package ~.web.ui --visuallyComposable true
+perform tests
+// script --file ~/recipeplanner_log.roo
+perform clean
+focus --class ~.domain.IngredientQuantity
+field reference --fieldName ingredient --type ~.domain.Ingredient
+field number --fieldName amount --type double
+focus --class ~.domain.Ingredient
+field string --fieldName name --notNull 
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-09-16 09:10:30
